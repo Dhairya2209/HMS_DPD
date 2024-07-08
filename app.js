@@ -43,7 +43,7 @@ config({path: "./config/config.env"});
 // });
 
 const corsOptions = {
-  origin: ['https://lively-horse-889bd9.netlify.app', 'https://delightful-rabanadas-df5856.netlify.app/login'], // Add the second frontend URL to the allowed origins
+  origin: ['https://lively-horse-889bd9.netlify.app', 'https://delightful-rabanadas-df5856.netlify.app'], // Add the second frontend URL to the allowed origins
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
   optionSuccessStatus: 200

@@ -10,6 +10,7 @@ import userRouter from "./router/userRouter.js"
 import appointmentRouter from "./router/appointmentRouter.js"
 
 
+
 const app =express();
 
 config({path: "./config/config.env"});
@@ -26,21 +27,29 @@ config({path: "./config/config.env"});
 
 // const app = express();
 
+// const corsOptions = {
+//   origin: ['https://lively-horse-889bd9.netlify.app'], // Add the frontend URL to the allowed origins
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true,
+//   optionSuccessStatus: 200
+// };
+
+// app.use(cors(corsOptions));
+
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', 'https://lively-horse-889bd9.netlify.app');
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     next();
+// });
 
 const corsOptions = {
-  origin: '*', // Add the frontend URL to the allowed origins
+  origin: ['https://lively-horse-889bd9.netlify.app'], // Add the frontend URL to the allowed origins
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
   optionSuccessStatus: 200
 };
- 
-app.use(cors(corsOptions));
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-});
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json());

@@ -28,12 +28,12 @@ config({path: "./config/config.env"});
 
 
 const corsOptions = {
-  origin: ['*'], // Add the frontend URL to the allowed origins
+  origin: '*', // Add the frontend URL to the allowed origins
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
   optionSuccessStatus: 200
 };
-
+ 
 app.use(cors(corsOptions));
 
 app.use((req, res, next) => {

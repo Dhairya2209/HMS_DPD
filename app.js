@@ -10,7 +10,6 @@ import userRouter from "./router/userRouter.js"
 import appointmentRouter from "./router/appointmentRouter.js"
 
 
-
 const app =express();
 
 config({path: "./config/config.env"});
@@ -27,8 +26,9 @@ config({path: "./config/config.env"});
 
 // const app = express();
 
+
 const corsOptions = {
-  origin: ['http://localhost:5173'], // Add the frontend URL to the allowed origins
+  origin: ['*'], // Add the frontend URL to the allowed origins
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
   optionSuccessStatus: 200
@@ -37,7 +37,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
